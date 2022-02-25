@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user.birthday = params[:user][:year] + "/" + params[:user][:month] + "/" + params[:user][:day]
   end
 
   def edit

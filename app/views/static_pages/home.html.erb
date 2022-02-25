@@ -1,4 +1,7 @@
 <div class="center jumbotron">
+  <% if logged_in? %>
+  ログイン済みです
+  <% else %>
   <h1>Welcome to the Sample App</h1>
 
   <h2>
@@ -12,3 +15,5 @@
 
 <%= link_to image_tag("rails.svg", alt: "Rails logo", width: "200px"),
                       "https://rubyonrails.org/" %>
+
+<% end %>                      

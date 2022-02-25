@@ -1,0 +1,24 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "ワンにゃふる！ディッシュ☆☆☆", '/', id: "logo" %>
+    
+    <nav>
+      <ul class="nav justify-content-end">
+        <% if logged_in? %>
+          <li class="nav-item"><%= link_to "レシピ新規作成", '#' , class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "作成したレシピ一覧", '#' , class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "フォロー済みユーザー一覧", '#' , class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "登録情報", '#' , class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "ヘルプ", '#' , class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link" %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to "新規会員登録",   'signup' , class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "初めての方へ", '#' , class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "ヘルプ", '#' , class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "ログイン", '/login', class: "nav-link" %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+  
+</header>

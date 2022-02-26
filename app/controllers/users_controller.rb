@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @user.birthday = params[:user][:year] + "/" + params[:user][:month] + "/" + params[:user][:day]
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def edit
@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
+    @user.birthday = params[:user][:year] + "/" + params[:user][:month] + "/" + params[:user][:day]
     if @user.save
       log_in @user
       flash[:success] = "会員登録が完了しました！"

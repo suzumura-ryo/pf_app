@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def edit
@@ -34,6 +33,6 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:nickname, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :gender)
     end
 end

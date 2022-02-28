@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1rem;
+      }
+
+      .header ul {
+        display: flex;
+        align-items: center;
+      }
+      .header li {
+        margin-right: 1.5rem;
+      }
+
+      .header-search input {
+        padding: auto;
+        border-radius: 7px;
+      }
+      .content-1,
+      .content-2,
+      .content-3,
+      .content-4,
+      .content-5,
+      .content-6,
+      .content-7,
+      .content-8,
+      .content-9 {
+        background-color: aqua;
+        height: 17rem;
+      }
+      .container {
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+      .content-1 {
+        grid-area: c1;
+      }
+      .content-2 {
+        grid-area: c2;
+      }
+      .content-3 {
+        grid-area: c3;
+      }
+      .content-4 {
+        grid-area: c4;
+      }
+      .content-5 {
+        grid-area: c5;
+      }
+      .content-6 {
+        grid-area: c6;
+      }
+      .content-7 {
+        grid-area: c7;
+      }
+      .content-8 {
+        grid-area: c8;
+      }
+      .main-content {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 20px;
+        grid-template-areas:
+          "c1 c1 c1 c1 c2 c2"
+          "c3 c3 c4 c4 c5 c5"
+          "c6 c6 c7 c7 c8 c8";
+      }
+    </style>
+    <header class="header">
+      <h1>this is your app</h1>
+      <div class="header-search">
+        <input type="text" />
+        <button>search</button>
+      </div>
+      <ul>
+        <li>新規</li>
+        <li>ログイン</li>
+        <li>初めて</li>
+        <li>ヘルプ</li>
+      </ul>
+    </header>
+    <div class="container">
+      <main class="main-content">
+        <div class="content-1">one</div>
+        <div class="content-2">two</div>
+        <div class="content-3">three</div>
+        <div class="content-4">four</div>
+        <div class="content-5">five</div>
+        <div class="content-6">six</div>
+        <div class="content-7">seven</div>
+        <div class="content-8">eight</div>
+      </main>
+    </div>
+  </body>
+</html>

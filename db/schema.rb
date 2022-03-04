@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_26_010022) do
+ActiveRecord::Schema.define(version: 2022_03_02_144101) do
 
-  create_table "microposts", force: :cascade do |t|
+  create_table "procedures", force: :cascade do |t|
+    t.string "image"
     t.text "content"
-    t.integer "user_id"
+    t.integer "recipe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
-    t.index ["user_id"], name: "index_microposts_on_user_id"
+    t.index ["recipe_id"], name: "index_procedures_on_recipe_id"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2022_02_26_010022) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_recipes_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

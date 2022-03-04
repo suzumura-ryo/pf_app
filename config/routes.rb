@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'create/destroy'
   #asルートの書き方
   #get  'sato', to: 'static_pages#about', as: 'static_pages_about'
   root  'static_pages#home'             
@@ -10,5 +11,7 @@ Rails.application.routes.draw do
   post  'login',  to: 'sessions#create', as: 'create_login'
   delete'logout', to: 'sessions#destroy',as: 'logout'
   resources :users
+  resources :recipes
+  resources :procedures
   
 end

@@ -1,0 +1,9 @@
+<li id="procedure-<%= procedure.id %>">
+  <%= link_to gravatar_for(procedure.user, size: 50), procedure.user %>
+  <span class="user"><%= link_to procedure.user.nickname, procedure.user %></span>
+  <span class="content"><%= procedure.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(procedure.created_at) %> ago.
+  </span>
+</li>
+

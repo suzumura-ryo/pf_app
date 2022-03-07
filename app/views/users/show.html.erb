@@ -8,13 +8,11 @@
     </section>
   </aside>
   <div class="col-md-8">
-    <% if @user.procedures %>
-      <ol class="procedures">
-        <%= render @procedures %>
+    <% if @recipes %>
+      <ol class="recipes">
+        <% render 'shared/recipe',recipes: @recipes %>
       </ol>
-      <%= will_paginate @procedures %>
     <% end %>
-    <h3>レシピ一覧 (<%= @user.procedures.count %>)</h3>
-
+    <h3>レシピ一覧 (<%= @recipes.count %>)</h3>
   </div>
 </div>

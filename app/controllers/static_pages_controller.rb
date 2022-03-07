@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   
   def home
+      @procedure = current_user.recipes.build if logged_in?
   end
   
   def show

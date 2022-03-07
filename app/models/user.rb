@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :procedures, dependent: :destroy
+    has_many :recipes, dependent: :destroy
     
     attr_accessor :remember_token
     before_save { self.email = email.downcase }
